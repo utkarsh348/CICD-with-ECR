@@ -1,3 +1,4 @@
+'''demo hello world flask app'''
 import os
 from flask import Flask
 
@@ -5,6 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
+    '''function to return the env message'''
     return f"{os.environ.get('MESSAGE')}"
 
 if __name__ == "__main__":
