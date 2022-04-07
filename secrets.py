@@ -6,7 +6,7 @@ import sys
 files = sys.argv[1:]
 
 
-regExp =r'[a-zA-Z0-9_\-]*KEY[(\W?)*]=[(\W?)*][a-zA-Z0-9_\-]*'
+REGEXP =r'[a-zA-Z0-9_\-]*KEY[(\W?)*]=[(\W?)*][a-zA-Z0-9_\-]*'
 
 secrets = []
 
@@ -15,7 +15,7 @@ for file in files:
 
         with open(file, encoding='utf-8') as f:
             for lineno, line in enumerate(f.readlines()):
-                if re.search(regExp, line):
+                if re.search(REGEXP, line):
                     secrets.append((line, lineno, file))
 
 
